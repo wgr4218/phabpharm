@@ -70,12 +70,12 @@ public class GetDB {
             Description.add(product.get(6));
             Category.add(product.get(7));
             ID.add(product.get(8));
-            CurrentStock.add(product.get(8));
+            CurrentStock.add(product.get(9));
 
             //System.out.println(product);
         }
 
-       /* System.out.println(Brand);
+        System.out.println(Brand);
         System.out.println(Amount);
         System.out.println(SPrice);
         System.out.println(PPrice);
@@ -84,7 +84,7 @@ public class GetDB {
         System.out.println(Description);
         System.out.println(Category);
         System.out.println(ID);
-        System.out.println(CurrentStock); */
+        System.out.println(CurrentStock);
 
 
     }
