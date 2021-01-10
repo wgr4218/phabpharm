@@ -22,6 +22,5 @@ public class DBacc extends HttpServlet {
         out.println(db.getFullStock());
         out.println(db.getLimit());
         out.println(db.getDescription());
-        out.println(db.AllProducts);
     }
 }
