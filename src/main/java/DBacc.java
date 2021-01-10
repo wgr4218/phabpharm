@@ -20,5 +20,4 @@ public class DBacc extends HttpServlet {
         out.println(brand);
     }
     */
- */
 }
