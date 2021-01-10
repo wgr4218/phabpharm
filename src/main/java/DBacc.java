@@ -11,8 +11,8 @@ public class DBacc extends HttpServlet {
     int count = 0;
     GetDB db = new GetDB();
     String brand = db.getBrand().get(0);
-    @Override
-/*    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
+/*    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
