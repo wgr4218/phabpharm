@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class GetDB {
     //ArrayList of ArrayList that stores all info from the DB
-    ArrayList<ArrayList> AllProducts = new ArrayList<ArrayList>();
+    public ArrayList<ArrayList> AllProducts = new ArrayList<ArrayList>();
     String jsonS = "";
 
     // Arrays into which the info will be moved to be used in the other classes:
@@ -75,7 +75,7 @@ public class GetDB {
             //System.out.println(product);
         }
 
-        System.out.println(Brand);
+/*        System.out.println(Brand);
         System.out.println(Amount);
         System.out.println(SPrice);
         System.out.println(PPrice);
@@ -85,7 +85,7 @@ public class GetDB {
         System.out.println(Category);
         System.out.println(ID);
         System.out.println(CurrentStock);
-
+*/
 
     }
 
