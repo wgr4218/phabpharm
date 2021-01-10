@@ -13,6 +13,6 @@ public class DBacc extends HttpServlet {
             IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
-        out.println(db.getAmount().get(0));
+        out.println(db.getAmount());
     }
 }
