@@ -12,11 +12,13 @@ public class DBacc extends HttpServlet {
     GetDB db = new GetDB();
     String brand = db.getBrand().get(0);
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
+/*    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.println(1);
         out.println(brand);
     }
+    */
+ */
 }
