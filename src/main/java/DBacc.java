@@ -14,5 +14,14 @@ public class DBacc extends HttpServlet {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.println(db.getAmount());
+        out.println(db.getBrand());
+        out.println(db.getSPrice());
+        out.println(db.getCategory());
+        out.println(db.getCurrentStock());
+        out.println(db.getPPrice());
+        out.println(db.getFullStock());
+        out.println(db.getLimit());
+        out.println(db.getDescription());
+
     }
 }
