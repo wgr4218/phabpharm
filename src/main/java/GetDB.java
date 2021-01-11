@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import  javax.smartcardio.Card;
 
 // code to get the information from the database in the constructor
 // store the info into arrays
@@ -13,7 +14,8 @@ import java.util.ArrayList;
 
 public class GetDB {
     //ArrayList of ArrayList that stores all info from the DB
-    public ArrayList<ArrayList> AllProducts = new ArrayList<ArrayList>();
+    ArrayList<ArrayList> AllProducts = new ArrayList<ArrayList>();
+    ArrayList<ArrayList> AllClients = new ArrayList<ArrayList>();
     String jsonS = "";
 
     // Arrays into which the info will be moved to be used in the other classes:
@@ -27,11 +29,17 @@ public class GetDB {
     ArrayList<String> Category = new ArrayList<>();
     ArrayList<String> ID = new ArrayList<>();
     ArrayList<String> CurrentStock = new ArrayList<>();
+    ArrayList<String> lastName = new ArrayList<>();
+    ArrayList<String> firstName = new ArrayList<>();
+    ArrayList<String> CardNumber = new ArrayList<>();
+    ArrayList<String> CCV = new ArrayList<>();
+    ArrayList<String> expDate = new ArrayList<>();
+    ArrayList<String> password = new ArrayList<>();
 
 
     public GetDB() {
         try {
-            URL myURL = new URL("https://projectservlet.herokuapp.com/DBaccess");
+            URL myURL = new URL("https://phabonlineshop.herokuapp.com/DBaccess");
             HttpURLConnection conn = (HttpURLConnection) myURL.openConnection();
             conn.setRequestMethod("GET");
             conn.setRequestProperty("Accept", "application/json");
@@ -47,6 +55,7 @@ public class GetDB {
 
             Gson gson = new Gson();
             AllProducts = gson.fromJson(jsonS, ArrayList.class);
+            AllClients = gson.fromJson(jsonS, ArrayList.class);
 
 
         } catch (Exception e) {
@@ -70,22 +79,22 @@ public class GetDB {
             Description.add(product.get(6));
             Category.add(product.get(7));
             ID.add(product.get(8));
-            CurrentStock.add(product.get(9));
+            CurrentStock.add(product.get(8));
 
-            //System.out.println(product);
+
         }
-
-/*        System.out.println(Brand);
-        System.out.println(Amount);
-        System.out.println(SPrice);
-        System.out.println(PPrice);
-        System.out.println(FullStock);
-        System.out.println(Limit);
-        System.out.println(Description);
-        System.out.println(Category);
-        System.out.println(ID);
-        System.out.println(CurrentStock);
-*/
+        for(int i = 0; i<AllClients.size(); i++){
+            ArrayList<String> clients = new ArrayList<String>();
+            clients = AllClients.get(i); // getting all the info for 1 product
+            // ordering from DB: lastname, firstname,cardnumber, ccv, expdate, password, id
+            lastName.add(clients.get(0));
+            firstName.add(clients.get(1));
+            CardNumber.add(clients.get(2));
+            CCV.add(clients.get(3));
+            expDate.add(clients.get(4));
+            password.add(clients.get(5));
+            ID.add(clients.get(6));
+        }
 
     }
 
@@ -108,5 +117,9 @@ public class GetDB {
     public ArrayList<String> getID() { return ID; }
 
     public ArrayList<String> getCurrentStock(){ return CurrentStock; }
+
+    public ArrayList<String> getLastName() { return lastName; }
+
+    public ArrayList<String> getPassword() { return password; }
 
 }
