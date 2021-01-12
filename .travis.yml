@@ -12,6 +12,6 @@ cache:
     - $HOME/.gradle/wrapper/
 deploy:
   provider: heroku
-  api_key: a61684dc-d6a9-49cb-9cd9-fa99c149eac0
-  app: phabonlineshop
+  api_key: b7f21cd3-cfc2-419d-aee6-1a6bb7022354
+  app: willsapp68
   skip_cleanup: true
