@@ -6,11 +6,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/DB")
+@WebServlet("/TEST")
 public class TESTJSP extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        /*req.getRequestDispatcher("../JSPs/test.jsp").include(req, resp);*/
+        req.getRequestDispatcher("/WEB-INF/my.jsp").include(req, resp);
     }
 }
