@@ -10,6 +10,6 @@ public class TESTJSP extends HttpServlet {
 
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
-        req.getRequestDispatcher("/test.jsp").include(req, resp);
+        req.getRequestDispatcher("test.jsp").include(req, resp);
     }
 }
